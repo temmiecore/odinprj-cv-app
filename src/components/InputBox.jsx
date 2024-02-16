@@ -4,8 +4,8 @@ export default function InputBox({ id, label, type, placeholder, onChange, isReq
     return (
       <div className="inputBox">
         <label htmlFor={id}>
-          <span className="inputBox-label">{label}</span>
-          {isRequired && <span className="inputBox-required"> required</span>}
+          {label}
+          {isRequired && <span className="required"> required</span>}
         </label>
   
         {type === "textarea" ? 

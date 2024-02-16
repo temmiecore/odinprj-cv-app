@@ -12,6 +12,91 @@ export default function CVEdit({ setForm, setEducation, setWork, setInterest, se
             [name]: value
         }));
     };
+    
+    // definitely need an factory 
+    const handleItemRemoval = (id, type) => {
+        switch (type) {
+            case "education": {
+                setEducation(prevData => {
+                    return prevData.filter((item) => item.id !== id);
+                });
+                break; 
+            }
+            case "work": {
+                setWork(prevData => {
+                    return prevData.filter((item) => item.id !== id);
+                });
+                break; 
+            }
+            case "interest": {
+                setInterest(prevData => {
+                    return prevData.filter((item) => item.id !== id);
+                }); 
+                break;
+            }
+            case "skill": {
+                setSkill(prevData => {
+                    return prevData.filter((item) => item.id !== id);
+                }); 
+                break;
+            }
+        }
+        //console.log(type);
+    };
+
+    // definitely need an factory
+    const handleItemEdit = (id, name, value, type) => {
+        switch (type) {
+            case "education": {
+                setEducation(prevData => {
+                    return prevData.map((item) => {
+                        if (item.id === id) {
+                            //console.log(value);
+                            return { ...item, [name]: value };
+                        }
+                        return item;
+                    });
+                });
+                break; 
+            }
+            case "work": {
+                setWork(prevData => {
+                    return prevData.map((item) => {
+                        if (item.id === id) {
+                            //console.log(value);
+                            return { ...item, [name]: value };
+                        }
+                        return item;
+                    });
+                });
+                break; 
+            }
+            case "interest": {
+                setInterest(prevData => {
+                    return prevData.map((item) => {
+                        if (item.id === id) {
+                            //console.log(value);
+                            return { ...item, [name]: value };
+                        }
+                        return item;
+                    });
+                });
+                break;
+            }
+            case "skill": {
+                setSkill(prevData => {
+                    return prevData.map((item) => {
+                        if (item.id === id) {
+                            //console.log(value);
+                            return { ...item, [name]: value };
+                        }
+                        return item;
+                    });
+                });
+                break;
+            }
+        }
+    };
 
     const handleEducationAdd = event => {
         event.preventDefault();
@@ -33,24 +118,6 @@ export default function CVEdit({ setForm, setEducation, setWork, setInterest, se
         const educationItem = { id, degree, school, schoolCity, schoolStartDate, schoolEndDate, schoolDesc};
         setEducation(prevData => ([...prevData, educationItem]));
         //console.log(educationItem);
-    };
-    
-    const handleEducationRemove = id => {
-        setEducation(prevData => {
-            return prevData.filter((item) => item.id !== id);
-        });
-    };
-
-    const handleEducationEdit = (id, name, value) => {
-        setEducation(prevData => {
-            return prevData.map((item) => {
-                if (item.id === id) {
-                    //console.log(value);
-                    return { ...item, [name]: value };
-                }
-                return item;
-            });
-        });
     };
 
     const handleWorkAdd = event => {
@@ -74,29 +141,11 @@ export default function CVEdit({ setForm, setEducation, setWork, setInterest, se
         setWork(prevData => ([...prevData, educationItem]));
         //console.log(educationItem);
     };
-    
-    const handleWorkRemove = id => {
-        setWork(prevData => {
-            return prevData.filter((item) => item.id !== id);
-        });
-    };
 
-    const handleWorkEdit = (id, name, value) => {
-        setWork(prevData => {
-            return prevData.map((item) => {
-                if (item.id === id) {
-                    //console.log(value);
-                    return { ...item, [name]: value };
-                }
-                return item;
-            });
-        });
-    };
-
-    return <>
+    return <div className="CVEdit">
             <PersonalDetails onInputChange={handlePersonalDetailChange} />
             <ResumeObjective onInputChange={handlePersonalDetailChange} />
-            <Education educationAdd={handleEducationAdd} educationRemove={handleEducationRemove} educationEdit={handleEducationEdit} educationList={educationList}/>
-            <WorkExperience workAdd={handleWorkAdd} workRemove={handleWorkRemove} workEdit={handleWorkEdit} workList={workList}/>
-        </>
+            <Education educationAdd={handleEducationAdd} educationRemove={handleItemRemoval} educationEdit={handleItemEdit} educationList={educationList}/>
+            <WorkExperience workAdd={handleWorkAdd} workRemove={handleItemRemoval} workEdit={handleItemEdit} workList={workList}/>
+        </div>
 }
