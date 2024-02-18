@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="-CV%20Application-_files/client.es"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>-CV Application-</title>
+  <style type="text/css" data-vite-dev-id="/home/temich/odin-study/odinprj-cv-app/src/index.css">@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Open Sans", sans-serif;
+    padding: 30px 5%;
+}
+
+.inputWindow {
+    width: 407px;
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputWindowHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputWindowHeader img {
+    width: 25px;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+.inputBox, .inputList, .addForm, .inputListItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputBox label {
+    font-size: 1em;
+}
+
+.inputBox .required {
+    font-size: 0.8em;
+    color: brown;
+    opacity: 0.9;
+}
+
+.inputBox input {
+    font-size: 0.9em;
+    width: 400px;
+    height: 30px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.inputBox textarea {
+    font-size: 0.9em;
+    height: 60px;
+    resize: vertical;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.divider {
+    margin: 20px;
+    border: 1px solid rgb(160, 160, 160);
+}
+
+button {
+    font-size: 1.3em;
+    width: 100px;
+    height: 35px;
+}
+
+.CVPreview {
+    padding: 15mm;
+    border: 2px solid black;
+    width: 210mm;
+    height: 297mm;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15mm;
+}
+
+.CVPreview h2, 
+.CVP-header h3, 
+.CVP-section p, 
+.CVP-item h3 {
+    font-weight: lighter;
+    font-size: 1.1em;
+}
+
+.CVP-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#CVP-name {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.CVP-links {
+    margin-top: 3mm;
+}
+
+.CVP-personalInfo, 
+.CVP-links, 
+.CVPreview p,
+.CVP-item h3,
+.CVP-item p {
+    color: #404040;
+}
+
+.CVP-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+}
+
+.CVP-item {
+    display: flex;
+    gap: 20mm;
+}
+
+.CVP-item h4 {
+    font-size: 1.1em;
+}
+
+.CVP-itemContent, .CVP-itemDate {
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+}
+
+.CVP-itemDate h3 {
+    width: 70px;
+}</style></head>
+  <body>
+    <div id="root"><div class="CVEdit"><div class="inputWindow"><div class="inputWindowHeader"><h2>Personal Details</h2><img src="-CV%20Application-_files/down.png" alt="close/open the window"></div><div style="display: none;"><div class="inputBox"><label for="firstName">First Name<span class="required"> required</span></label><input type="text" name="firstName" id="firstName" placeholder="John" required=""></div><div class="inputBox"><label for="lastName">Last Name<span class="required"> required</span></label><input type="text" name="lastName" id="lastName" placeholder="Doe" required=""></div><div class="inputBox"><label for="email">Email<span class="required"> required</span></label><input type="email" name="email" id="email" placeholder="email@email.com" required=""></div><div class="inputBox"><label for="phone">Phone Number<span class="required"> required</span></label><input type="tel" name="phone" id="phone" placeholder="555-555-5555" required=""></div><div class="inputBox"><label for="country">Country</label><input type="text" name="country" id="country" placeholder=""></div><div class="inputBox"><label for="city">City</label><input type="text" name="city" id="city" placeholder=""></div><div class="inputBox"><label for="birthday">Date of Birth</label><input type="date" name="birthday" id="birthday" placeholder=""></div><div class="inputBox"><label for="links">Related Links</label><input type="text" name="links" id="links" placeholder="github, linkedIn, facebook, etc."></div></div></div><div class="inputWindow"><div class="inputWindowHeader"><h2>Resume Objective</h2><img src="-CV%20Application-_files/down.png" alt="close/open the window"></div><div style="display: none;"><div class="inputBox"><label for="resumeObj"><span class="required"> required</span></label><textarea id="resumeObj" name="resumeObj" placeholder="Type here." required=""></textarea></div></div></div><div class="inputWindow"><div class="inputWindowHeader"><h2>Education</h2><img src="-CV%20Application-_files/down.png" alt="close/open the window"></div><div class="inputList" style="display: none;"><div class="inputListItem"><div class="inputBox"><label>Degree<span class="required"> required</span></label><input type="text" placeholder="" required="" value="Bachelor of General Studies"></div><div class="inputBox"><label>School<span class="required"> required</span></label><input type="text" placeholder="" required="" value="California State University"></div><div class="inputBox"><label>City</label><input type="text" placeholder="" value="California"></div><div class="inputBox"><label>Start Date<span class="required"> required</span></label><input type="date" placeholder="" required=""></div><div class="inputBox"><label>End Date</label><input type="date" placeholder=""></div><div class="inputBox"><label>Description</label><textarea placeholder="">Doggo
+ ipsum heckin snoot heckin good boys heckin you are doin me a concern 
+pats, mlem pupper clouds long bois.  Borkdrive extremely cuuuuuute 
+clouds super chub, sub woofer. Many pats very jealous pupper ur givin me
+ a spook noodle horse shibe thicc snoot big ol, length boy shoob snoot 
+heckin good boys and girls long bois.</textarea></div><button>Remove</button><div class="divider"></div></div><div class="inputListItem"><div class="inputBox"><label>Degree<span class="required"> required</span></label><input type="text" placeholder="" required="" value="Master of Business Administration"></div><div class="inputBox"><label>School<span class="required"> required</span></label><input type="text" placeholder="" required="" value="Harvard University"></div><div class="inputBox"><label>City</label><input type="text" placeholder="" value="Massachusetts"></div><div class="inputBox"><label>Start Date<span class="required"> required</span></label><input type="date" placeholder="" required=""></div><div class="inputBox"><label>End Date</label><input type="date" placeholder=""></div><div class="inputBox"><label>Description</label><textarea placeholder="">Doggo
+ ipsum heckin snoot heckin good boys heckin you are doin me a concern 
+pats, mlem pupper clouds long bois.  Borkdrive extremely cuuuuuute 
+clouds super chub, sub woofer. Many pats very jealous pupper ur givin me
+ a spook noodle horse shibe thicc snoot big ol, length boy shoob snoot 
+heckin good boys and girls long bois.</textarea></div><button>Remove</button><div class="divider"></div></div></div><form class="addForm" style="display: none;"><div class="inputBox"><label for="degree">Degree<span class="required"> required</span></label><input type="text" name="degree" id="degree" placeholder="" required=""></div><div class="inputBox"><label for="school">School<span class="required"> required</span></label><input type="text" name="school" id="school" placeholder="" required=""></div><div class="inputBox"><label for="schoolCity">City</label><input type="text" name="schoolCity" id="schoolCity" placeholder=""></div><div class="inputBox"><label for="schoolStartDate">Start Date<span class="required"> required</span></label><input type="date" name="schoolStartDate" id="schoolStartDate" placeholder="" required=""></div><div class="inputBox"><label for="schoolEndDate">End Date</label><input type="date" name="schoolEndDate" id="schoolEndDate" placeholder=""></div><div class="inputBox"><label for="schoolDesc">Description</label><textarea id="schoolDesc" name="schoolDesc" placeholder=""></textarea></div><button type="submit">Add</button></form></div><div class="inputWindow"><div class="inputWindowHeader"><h2>Work</h2><img src="-CV%20Application-_files/down.png" alt="close/open the window"></div><div class="inputList" style=""></div><form class="addForm" style=""><div class="inputBox"><label for="jobTitle">Job Title<span class="required"> required</span></label><input type="text" name="jobTitle" id="jobTitle" placeholder="" required=""></div><div class="inputBox"><label for="employer">Employer<span class="required"> required</span></label><input type="text" name="employer" id="employer" placeholder="" required=""></div><div class="inputBox"><label for="workCity">City</label><input type="text" name="workCity" id="workCity" placeholder=""></div><div class="inputBox"><label for="workStartDate">Start Date<span class="required"> required</span></label><input type="date" name="workStartDate" id="workStartDate" placeholder="" required=""></div><div class="inputBox"><label for="workEndDate">End Date</label><input type="date" name="workEndDate" id="workEndDate" placeholder=""></div><div class="inputBox"><label for="workDesc">Description</label><textarea id="workDesc" name="workDesc" placeholder=""></textarea></div><button type="submit">Add</button></form></div><button>Load Default</button></div><div class="CVPreview"><div class="CVP-header"><div><h2 id="CVP-name">JOHN DOE</h2><h3 class="CVP-links">github.com/username</h3></div><div class="CVP-personalInfo"><h3>29-03-1994</h3><h3>USA, California</h3><h3>555-555-5555</h3><h3>email@email.com</h3></div></div><div class="CVP-section CVP-resumeObjective"><h3>Resume Objective</h3><p>Doggo
+ ipsum heckin snoot heckin good boys heckin you are doin me a concern 
+pats, mlem pupper clouds long bois.  Borkdrive extremely cuuuuuute 
+clouds super chub, sub woofer. Many pats very jealous pupper ur givin me
+ a spook noodle horse shibe thicc snoot big ol, length boy shoob snoot 
+heckin good boys and girls long bois.</p></div><div class="CVP-section CVP-education"><h3>Education</h3><div class="CVP-item"><div class="CVP-itemDate"><h3>Feb 2222</h3><h3>Feb 2226</h3></div><div class="CVP-itemContent"><h4>BACHELOR OF GENERAL STUDIES</h4><h4>California State University, California</h4><p>Doggo
+ ipsum heckin snoot heckin good boys heckin you are doin me a concern 
+pats, mlem pupper clouds long bois.  Borkdrive extremely cuuuuuute 
+clouds super chub, sub woofer. Many pats very jealous pupper ur givin me
+ a spook noodle horse shibe thicc snoot big ol, length boy shoob snoot 
+heckin good boys and girls long bois.</p></div></div><div class="CVP-item"><div class="CVP-itemDate"><h3>Feb 2228</h3><h3>Feb 2234</h3></div><div class="CVP-itemContent"><h4>MASTER OF BUSINESS ADMINISTRATION</h4><h4>Harvard University, Massachusetts</h4><p>Doggo
+ ipsum heckin snoot heckin good boys heckin you are doin me a concern 
+pats, mlem pupper clouds long bois.  Borkdrive extremely cuuuuuute 
+clouds super chub, sub woofer. Many pats very jealous pupper ur givin me
+ a spook noodle horse shibe thicc snoot big ol, length boy shoob snoot 
+heckin good boys and girls long bois.</p></div></div></div><div class="CVP-section CVP-work"><h3>Professional experience</h3></div></div></div>
+    <script type="module" src="-CV%20Application-_files/main.es"></script>
+  
+
+<div style="position: absolute !important; top: 0px !important; left: 0px !important; height: 0px !important; width: 0px !important;" data-lastpass-root=""></div></body></html>

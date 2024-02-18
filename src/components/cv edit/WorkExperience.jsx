@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InputBox from "../InputBox"; //id, label, type, placeholder, onChange, isRequired
+import down from '../../assets/down.png';
 
 export default function WorkExperience( { workAdd, workRemove, workEdit, workList } ) {
     const [open, setOpen] = useState(false); 
@@ -7,7 +8,7 @@ export default function WorkExperience( { workAdd, workRemove, workEdit, workLis
     return <div className="inputWindow">
         <div className="inputWindowHeader">
             <h2>Work</h2>
-            <img src="src/assets/down.png" alt="close/open the window" onClick={() => setOpen(!open)}/>
+            <img src={down} alt="close/open the window" onClick={() => setOpen(!open)}/>
         </div>
         <div className="inputList" style={ !open ? {display: "none"} : null }>
         {

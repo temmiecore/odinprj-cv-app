@@ -4,7 +4,7 @@ import ResumeObjective from "./cv edit/ResumeObjective";
 import { v4 as uuidv4 } from 'uuid';
 import WorkExperience from "./cv edit/WorkExperience";
 
-export default function CVEdit({ setForm, setEducation, setWork, setInterest, setSkill, educationList, workList, interestList, skillList }) {
+export default function CVEdit({ setForm, setEducation, setWork, form, educationList, workList, loadDefault }) {
     const handlePersonalDetailChange = event => {
         const { name, value } = event.target;
         setForm(prevState => ({
@@ -13,7 +13,7 @@ export default function CVEdit({ setForm, setEducation, setWork, setInterest, se
         }));
     };
     
-    // definitely need an factory 
+    // make different cv edit windows into one customizable window  
     const handleItemRemoval = (id, type) => {
         switch (type) {
             case "education": {
@@ -28,23 +28,10 @@ export default function CVEdit({ setForm, setEducation, setWork, setInterest, se
                 });
                 break; 
             }
-            case "interest": {
-                setInterest(prevData => {
-                    return prevData.filter((item) => item.id !== id);
-                }); 
-                break;
-            }
-            case "skill": {
-                setSkill(prevData => {
-                    return prevData.filter((item) => item.id !== id);
-                }); 
-                break;
-            }
         }
         //console.log(type);
     };
 
-    // definitely need an factory
     const handleItemEdit = (id, name, value, type) => {
         switch (type) {
             case "education": {
@@ -70,30 +57,6 @@ export default function CVEdit({ setForm, setEducation, setWork, setInterest, se
                     });
                 });
                 break; 
-            }
-            case "interest": {
-                setInterest(prevData => {
-                    return prevData.map((item) => {
-                        if (item.id === id) {
-                            //console.log(value);
-                            return { ...item, [name]: value };
-                        }
-                        return item;
-                    });
-                });
-                break;
-            }
-            case "skill": {
-                setSkill(prevData => {
-                    return prevData.map((item) => {
-                        if (item.id === id) {
-                            //console.log(value);
-                            return { ...item, [name]: value };
-                        }
-                        return item;
-                    });
-                });
-                break;
             }
         }
     };
@@ -137,15 +100,16 @@ export default function CVEdit({ setForm, setEducation, setWork, setInterest, se
         event.target[4].value = "";
         event.target[5].value = "";
 
-        const educationItem = { id, jobTitle, employer, workCity, workStartDate, workEndDate, workDesc};
-        setWork(prevData => ([...prevData, educationItem]));
-        //console.log(educationItem);
+        const workItem = { id, jobTitle, employer, workCity, workStartDate, workEndDate, workDesc};
+        setWork(prevData => ([...prevData, workItem]));
+        //console.log(workItem);
     };
 
     return <div className="CVEdit">
-            <PersonalDetails onInputChange={handlePersonalDetailChange} />
-            <ResumeObjective onInputChange={handlePersonalDetailChange} />
+            <PersonalDetails onInputChange={handlePersonalDetailChange} form={form}/>
+            <ResumeObjective onInputChange={handlePersonalDetailChange} form={form}/>
             <Education educationAdd={handleEducationAdd} educationRemove={handleItemRemoval} educationEdit={handleItemEdit} educationList={educationList}/>
             <WorkExperience workAdd={handleWorkAdd} workRemove={handleItemRemoval} workEdit={handleItemEdit} workList={workList}/>
+            <button onClick={() => loadDefault()}>Load Default</button>
         </div>
 }

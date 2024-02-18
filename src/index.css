@@ -12,12 +12,6 @@
     padding: 30px 5%;
 }
 
-.CVPreview {
-    border: 2px solid black;
-    width: 210mm;
-    height: 297mm;
-}
-
 .inputWindow {
     width: 407px;
     padding: 10px;
@@ -44,14 +38,19 @@ h2 {
     font-size: 1.3em;
 }
 
-.inputBox, .inputList, .addForm, .inputListItem {
+.inputList, .addForm, .inputListItem {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
 }
 
 .inputBox label {
     font-size: 1em;
+    margin-top: 10px;
 }
 
 .inputBox .required {
@@ -71,7 +70,7 @@ h2 {
 
 .inputBox textarea {
     font-size: 0.9em;
-    height: 60px;
+    height: 73px;
     resize: vertical;
     border: 1px black solid;
     border-radius: 5px;
@@ -86,6 +85,77 @@ h2 {
 
 button {
     font-size: 1.3em;
-    width: 100px;
+    width: fit-content;
+    padding: 5px 20px;
     height: 35px;
+    margin-top: 10px;
+}
+
+
+
+
+.CVPreview {
+    padding: 15mm;
+    border: 2px solid black;
+    width: 210mm;
+    height: 297mm;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15mm;
+}
+
+.CVPreview h2, 
+.CVP-header h3, 
+.CVP-section p, 
+.CVP-item h3 {
+    font-weight: lighter;
+    font-size: 1.1em;
+}
+
+.CVP-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#CVP-name {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.CVP-links {
+    margin-top: 3mm;
+}
+
+.CVP-personalInfo, 
+.CVP-links, 
+.CVPreview p,
+.CVP-item h3,
+.CVP-item p {
+    color: #404040;
+}
+
+.CVP-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+}
+
+.CVP-item {
+    display: flex;
+    gap: 20mm;
+}
+
+.CVP-item h4 {
+    font-size: 1.1em;
+}
+
+.CVP-itemContent, .CVP-itemDate {
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+}
+
+.CVP-itemDate h3 {
+    width: 70px;
 }
