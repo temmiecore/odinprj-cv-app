@@ -7,12 +7,27 @@ export default function InputBox({ id, label, type, placeholder, onChange, isReq
           {label}
           {isRequired && <span className="required"> required</span>}
         </label>
-  
-        {type === "textarea" ? 
-          <textarea value={value} id={id} name={id} placeholder={placeholder} onChange={onChange} {..._required}></textarea> 
-          : 
-          <input value={value} type={type} name={id} id={id} placeholder={placeholder} onChange={onChange} {..._required}/>
-        }
+
+        {type === "textarea" ? (
+          <textarea
+            value={value}
+            id={id}
+            name={id}
+            placeholder={placeholder}
+            onChange={onChange}
+            {..._required}
+          ></textarea>
+        ) : (
+          <input
+            value={value}
+            type={type}
+            name={id}
+            id={id}
+            placeholder={placeholder}
+            onChange={onChange}
+            {..._required}
+          />
+        )}
       </div>
     );
   }

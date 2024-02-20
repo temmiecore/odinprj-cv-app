@@ -1,0 +1,65 @@
+.CVPreview {
+    padding: 15mm;
+    border: 2px solid black;
+    width: 210mm;
+    height: 297mm;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15mm;
+}
+
+.CVPreview h2, 
+.header h3, 
+.section p, 
+.item h3 {
+    font-weight: lighter;
+    font-size: 1.1em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#name {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.links {
+    margin-top: 3mm;
+}
+
+.personalInfo, 
+.links, 
+.CVPreview p,
+.item h3,
+.item p {
+    color: #404040;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 3mm;
+}
+
+.item {
+    display: flex;
+    gap: 20mm;
+}
+
+.item h4 {
+    font-size: 1.1em;
+}
+
+.itemContent, .itemDate {
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+}
+
+.itemDate h3 {
+    width: 70px;
+}

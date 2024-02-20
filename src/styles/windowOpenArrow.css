@@ -1,0 +1,9 @@
+.open, .closed {
+    transition: transform 0.2s ease-out;
+    width: 25px;
+    cursor: pointer;
+}
+
+.open {
+    transform: rotate(180deg);
+}
