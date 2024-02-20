@@ -60,6 +60,14 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
     const handleEducationAdd = event => {
         event.preventDefault();
 
+        const id = uuidv4();
+        const degree = event.target[0].value;
+        const school = event.target[1].value;
+        const city = event.target[2].value;
+        const startDate = event.target[3].value;
+        const endDate = event.target[4].value;
+        const desc = event.target[5].value;
+
         event.target[0].value = "";
         event.target[1].value = "";
         event.target[2].value = "";
@@ -68,13 +76,13 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
         event.target[5].value = "";
 
         const educationItem = { 
-            "id":uuidv4(), 
-            "Degree":event.target[0].value, 
-            "School":event.target[1].value, 
-            "City":event.target[2].value, 
-            "Start Date":event.target[3].value, 
-            "End Date":event.target[4].value, 
-            "Description":event.target[5].value
+            "id":id, 
+            "Degree":degree, 
+            "School":school, 
+            "City":city, 
+            "Start Date":startDate, 
+            "End Date":endDate, 
+            "Description":desc
         };
 
         setEducation(prevData => ([...prevData, educationItem]));
@@ -82,6 +90,14 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
 
     const handleWorkAdd = event => {
         event.preventDefault();
+
+        const id = uuidv4();
+        const jobTitle = event.target[0].value;
+        const employer = event.target[1].value;
+        const city = event.target[2].value;
+        const startDate = event.target[3].value;
+        const endDate = event.target[4].value;
+        const desc = event.target[5].value;
 
         event.target[0].value = "";
         event.target[1].value = "";
@@ -91,13 +107,13 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
         event.target[5].value = "";
 
         const workItem = { 
-            "id":uuidv4(), 
-            "Job Title":event.target[0].value, 
-            "Employer":event.target[1].value, 
-            "City":event.target[2].value, 
-            "Start Date":event.target[3].value, 
-            "End Date":event.target[4].value, 
-            "Description":event.target[5].value
+            "id":id, 
+            "Job Title":jobTitle, 
+            "Employer":employer, 
+            "City":city, 
+            "Start Date":startDate, 
+            "End Date":endDate, 
+            "Description":desc
         };
 
         setWork(prevData => ([...prevData, workItem]));
