@@ -1,0 +1,21 @@
+.section {
+
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.divider {
+    margin: 15px;
+    border: 1px solid gray;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding-bottom: 0.5em;
+}
+

@@ -1,0 +1,21 @@
+.inputBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox input,
+.inputBox textarea {
+    padding: 2px 5px;
+    font-size: 1em;
+}
+
+.inputBox textarea {
+    height: 9em;
+    resize: vertical;
+}
+
+
+.inputBox .required {
+    font-size: 0.7em;
+    color: brown;
+}

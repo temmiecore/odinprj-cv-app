@@ -1,4 +1,14 @@
-export default function InputBox({ id, label, type, placeholder, onChange, isRequired, value }) {
+import "../_NEW/inputbox.css"
+
+export default function InputBox({ 
+  id, 
+  label, 
+  type, 
+  placeholder, 
+  onChange, 
+  isRequired, 
+  value 
+}) {
     const _required = isRequired ? {required: true} : {}
 
     return (

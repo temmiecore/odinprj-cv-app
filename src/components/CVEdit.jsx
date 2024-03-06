@@ -1,10 +1,21 @@
-import ListWindow from "./cv edit/ListWindow";
-import PersonalDetails from "./cv edit/PersonalDetails";
-import ResumeObjective from "./cv edit/ResumeObjective";
+import ListWindow from "../_NEW/list sections forms/ListWindow";
+import PersonalDetails from "../_NEW/edit section contents/PersonalDetails";
+import ResumeObjective from "../_NEW/edit section contents/ResumeObjective";
 import { v4 as uuidv4 } from 'uuid';
-import "../styles/cvEdit.css"
+import EditSection from "../_NEW/EditSection";
+import styles from "../_NEW/cvedit.module.css";
+import EducationForm from "../_NEW/list sections forms/EducationForm";
+import WorkForm from "../_NEW/list sections forms/WorkForm";
 
-export default function CVEdit({ setForm, setEducation, setWork, form, educationList, workList, loadDefault }) {
+export default function CVEdit({ 
+    setForm, 
+    setEducation, 
+    setWork, 
+    form, 
+    educationList, 
+    workList, 
+    loadDefault 
+}) {
     const handlePersonalDetailChange = event => {
         const { name, value } = event.target;
         setForm(prevState => ({
@@ -12,20 +23,20 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
             [name]: value
         }));
     };
-    
+
     const handleItemRemoval = (id, type) => {
         switch (type) {
             case "Education": {
                 setEducation(prevData => {
                     return prevData.filter((item) => item.id !== id);
                 });
-                break; 
+                break;
             }
             case "Work": {
                 setWork(prevData => {
                     return prevData.filter((item) => item.id !== id);
                 });
-                break; 
+                break;
             }
         }
     };
@@ -41,7 +52,7 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
                         return item;
                     });
                 });
-                break; 
+                break;
             }
             case "Work": {
                 setWork(prevData => {
@@ -52,7 +63,7 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
                         return item;
                     });
                 });
-                break; 
+                break;
             }
         }
     };
@@ -75,14 +86,14 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
         event.target[4].value = "";
         event.target[5].value = "";
 
-        const educationItem = { 
-            "id":id, 
-            "Degree":degree, 
-            "School":school, 
-            "City":city, 
-            "Start Date":startDate, 
-            "End Date":endDate, 
-            "Description":desc
+        const educationItem = {
+            "id": id,
+            "Degree": degree,
+            "School": school,
+            "City": city,
+            "Start Date": startDate,
+            "End Date": endDate,
+            "Description": desc
         };
 
         setEducation(prevData => ([...prevData, educationItem]));
@@ -106,36 +117,48 @@ export default function CVEdit({ setForm, setEducation, setWork, form, education
         event.target[4].value = "";
         event.target[5].value = "";
 
-        const workItem = { 
-            "id":id, 
-            "Job Title":jobTitle, 
-            "Employer":employer, 
-            "City":city, 
-            "Start Date":startDate, 
-            "End Date":endDate, 
-            "Description":desc
+        const workItem = {
+            "id": id,
+            "Job Title": jobTitle,
+            "Employer": employer,
+            "City": city,
+            "Start Date": startDate,
+            "End Date": endDate,
+            "Description": desc
         };
 
         setWork(prevData => ([...prevData, workItem]));
     };
 
-    return <div className="CVEdit">
-            <PersonalDetails onInputChange={handlePersonalDetailChange} form={form}/>
-            <ResumeObjective onInputChange={handlePersonalDetailChange} form={form}/>
-            <ListWindow 
-            windowHeader={"Education"} 
-            addItem={handleEducationAdd} 
-            removeItem={handleItemRemoval} 
-            editItem={handleItemEdit} 
-            itemList={educationList}
-            />
-            <ListWindow 
-            windowHeader={"Work"} 
-            addItem={handleWorkAdd} 
-            removeItem={handleItemRemoval} 
-            editItem={handleItemEdit} 
-            itemList={workList}
-            />
-            <button onClick={() => loadDefault()}>Load Default</button>
-        </div>
+    return <div className={styles.section}>
+        <EditSection headerText="Personal Details">
+            <PersonalDetails onInputChange={handlePersonalDetailChange} form={form} />
+        </EditSection>
+
+        <EditSection headerText="Resume Objective">
+            <ResumeObjective onInputChange={handlePersonalDetailChange} form={form} />
+        </EditSection>
+
+        <EditSection headerText="Education">
+            <ListWindow
+                windowId={"Education"}
+                removeItem={handleItemRemoval}
+                editItem={handleItemEdit}
+                itemList={educationList} >
+                <EducationForm addItem={handleEducationAdd} />
+            </ListWindow>
+        </EditSection>
+
+        <EditSection headerText="Work">
+            <ListWindow
+                windowId={"Work"}
+                removeItem={handleItemRemoval}
+                editItem={handleItemEdit}
+                itemList={workList} >
+                <WorkForm addItem={handleWorkAdd} />
+            </ListWindow>
+        </EditSection>
+
+        <button onClick={() => loadDefault()}>Load Default</button>
+    </div>
 }
