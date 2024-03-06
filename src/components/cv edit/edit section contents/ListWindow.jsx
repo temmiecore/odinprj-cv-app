@@ -1,5 +1,5 @@
 import ListItem from "./ListItem";
-import styles from "../../_NEW/list sections forms/listwindow.module.css"
+import styles from "../../../styles/listwindow.module.css"
 
 export default function ListWindow({
     windowId,

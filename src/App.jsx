@@ -36,9 +36,9 @@ export default function App() {
     }
 
     return <>
-            <CVEdit setForm={setForm} dispatch={dispatch} form={form} educationList={education} workList={work} loadDefault={loadDefault}/>
-            <CVPreview form={form} education={education} work={work}/>
-        </>
+        <CVEdit setForm={setForm} dispatch={dispatch} form={form} educationList={education} workList={work} loadDefault={loadDefault} />
+        <CVPreview form={form} education={education} work={work} />
+    </>
 }
 
 function itemHandlingReducer(prevState, action) {

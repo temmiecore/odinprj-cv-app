@@ -1,6 +1,6 @@
 import { useState } from "react";
-import WindowOpenArrow from "../components/WindowOpenArrow.";
-import styles from "./editsection.module.css"
+import WindowOpenArrow from "./WindowOpenArrow.";
+import styles from "../../styles/editsection.module.css"
 
 function EditSection({
     headerText,

@@ -1,5 +1,5 @@
-import InputBox from "../../components/InputBox";
-import styles from "../list sections forms/listwindow.module.css"
+import InputBox from "../InputBox";
+import styles from "../../../styles/listwindow.module.css"
 
 function ListItem({
     item,

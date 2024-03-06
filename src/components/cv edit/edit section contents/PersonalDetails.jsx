@@ -1,5 +1,5 @@
-import InputBox from "../../components/InputBox";
-import styles from "./editsectioncontent.module.css"
+import InputBox from "../InputBox";
+import styles from "../../../styles/editsectioncontent.module.css"
 
 function PersonalDetails({
     onInputChange,

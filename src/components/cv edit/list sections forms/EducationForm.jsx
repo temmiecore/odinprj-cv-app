@@ -1,47 +1,47 @@
-import InputBox from "../../components/InputBox";
-import styles from "./listwindow.module.css"
+import InputBox from "../InputBox";
+import styles from "../../../styles/listwindow.module.css"
 
-function WorkForm({ addItem }) {
+function EducationForm({ addItem }) {
     return <form
         className={styles.item}
         onSubmit={addItem}>
         <InputBox
-            id="jobTitle"
-            label="Job Title"
+            id="degree"
+            label="Degree"
             type="text"
             placeholder=""
             isRequired={true}
         />
         <InputBox
-            id="employer"
-            label="Employer"
+            id="school"
+            label="School"
             type="text"
             placeholder=""
             isRequired={true}
         />
         <InputBox
-            id="workCity"
+            id="schoolCity"
             label="City"
             type="text"
             placeholder=""
             isRequired={false}
         />
         <InputBox
-            id="workStartDate"
+            id="schoolStartDate"
             label="Start Date"
             type="date"
             placeholder=""
             isRequired={true}
         />
         <InputBox
-            id="workEndDate"
+            id="schoolEndDate"
             label="End Date"
             type="date"
             placeholder=""
             isRequired={false}
         />
         <InputBox
-            id="workDesc"
+            id="schoolDesc"
             label="Description"
             type="textarea"
             placeholder=""
@@ -51,4 +51,4 @@ function WorkForm({ addItem }) {
     </form>
 }
 
-export default WorkForm;
+export default EducationForm;

@@ -1,5 +1,5 @@
-import "../styles/windowOpenArrow.css"
-import down from "../assets/down.png"
+import "../../styles/windowOpenArrow.css"
+import down from "../../assets/down.png"
 
 export default function WindowOpenArrow({ open, setOpen }) {
     return (

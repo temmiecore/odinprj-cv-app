@@ -1,4 +1,4 @@
-import "../_NEW/inputbox.css"
+import "../../styles/inputbox.css"
 
 export default function InputBox({ 
   id, 

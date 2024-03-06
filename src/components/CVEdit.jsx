@@ -1,18 +1,18 @@
-import ListWindow from "../_NEW/list sections forms/ListWindow";
-import PersonalDetails from "../_NEW/edit section contents/PersonalDetails";
-import ResumeObjective from "../_NEW/edit section contents/ResumeObjective";
-import EditSection from "../_NEW/EditSection";
-import styles from "../_NEW/cvedit.module.css";
-import EducationForm from "../_NEW/list sections forms/EducationForm";
-import WorkForm from "../_NEW/list sections forms/WorkForm";
+import PersonalDetails from "../components/cv edit/edit section contents/PersonalDetails";
+import ResumeObjective from "../components/cv edit/edit section contents/ResumeObjective";
+import ListWindow from "../components/cv edit/edit section contents/ListWindow";
+import EditSection from "../components/cv edit/EditSection";
+import EducationForm from "../components/cv edit/list sections forms/EducationForm";
+import WorkForm from "../components/cv edit/list sections forms/WorkForm";
+import styles from "../styles/cvedit.module.css";
 
-export default function CVEdit({ 
-    setForm, 
+export default function CVEdit({
+    setForm,
     dispatch,
-    form, 
-    educationList, 
-    workList, 
-    loadDefault 
+    form,
+    educationList,
+    workList,
+    loadDefault
 }) {
     const handlePersonalDetailChange = event => {
         const { name, value } = event.target;
