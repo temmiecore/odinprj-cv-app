@@ -1,11 +1,11 @@
 import { useReducer, useState } from "react";
-import CVEdit from "./components/CVEdit";
-import CVPreview from "./components/CVPreview";
+import CVEdit from "./components/CVEditModule";
+import CVPreview from "./components/CVPreviewModule";
 import { useEffect } from 'react';
-import { defaultForm, educationItem1, educationItem2, workItem1 } from "./components/cv preview/DefaultData";
+import { defaultForm, educationItem1, educationItem2, workItem1 } from "./components/DefaultData.js";
 import { v4 as uuidv4 } from 'uuid';
 import { usePDF } from 'react-to-pdf';
-import CVStyle from "./components/CVStyle";
+import CVStyle from "./components/CVStyleModule";
 
 const initialLists = {
     education: [educationItem1, educationItem2],
@@ -13,9 +13,9 @@ const initialLists = {
     skills: [],
 }
 
-export default function App() {
+function App() {
     const {toPDF, targetRef} = usePDF({filename: "cv.pdf"});
-    
+
     const [styling, setStyling] = useState({
         headerAlignment: "left",
         font: "Times New Roman"
@@ -142,3 +142,5 @@ function itemHandlingReducer(prevState, action) {
         }
     }
 }
+
+export default App;

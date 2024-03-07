@@ -1,12 +1,12 @@
-import PersonalDetails from "../components/cv edit/edit section contents/PersonalDetails";
-import ResumeObjective from "../components/cv edit/edit section contents/ResumeObjective";
-import ListWindow from "../components/cv edit/edit section contents/ListWindow";
-import EditSection from "../components/cv edit/EditSection";
-import EducationForm from "../components/cv edit/list sections forms/EducationForm";
-import WorkForm from "../components/cv edit/list sections forms/WorkForm";
-import styles from "../styles/cvedit.module.css";
+import PersonalDetails from "./cv edit/edit section contents/PersonalDetails";
+import ResumeObjective from "./cv edit/edit section contents/ResumeObjective";
+import ListWindow from "./cv edit/edit section contents/ListWindow";
+import EditSection from "./cv edit/EditSection";
+import EducationForm from "./cv edit/list sections forms/EducationForm";
+import WorkForm from "./cv edit/list sections forms/WorkForm";
 import SkillsForm from "./cv edit/list sections forms/SkillsForm";
 import { useState } from "react";
+import styles from "../styles/cvEditModule.module.css";
 
 function CVEdit({
     setForm,

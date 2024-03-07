@@ -1,4 +1,4 @@
-import "../styles/cvPreview.css";
+import "../styles/cvPreviewModule.css";
 
 function CVPreview({
     form,

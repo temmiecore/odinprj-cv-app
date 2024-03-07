@@ -1,5 +1,5 @@
 import InputBox from "../InputBox";
-import styles from "../../../styles/listwindow.module.css"
+import styles from "../../../styles/listWindow.module.css"
 
 function WorkForm({ addItem }) {
     return <form

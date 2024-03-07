@@ -1,7 +1,7 @@
 import ListItem from "./ListItem";
-import styles from "../../../styles/listwindow.module.css"
+import styles from "../../../styles/listWindow.module.css"
 
-export default function ListWindow({
+function ListWindow({
     windowId,
     removeItem,
     editItem,
@@ -30,3 +30,5 @@ export default function ListWindow({
         </div>
     );
 }
+
+export default ListWindow;

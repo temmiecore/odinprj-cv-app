@@ -1,4 +1,4 @@
-import styles from "../styles/cvstyling.module.css"
+import styles from "../styles/cvStylingModule.module.css"
 
 function CVStyle({setStyling}) {
 
