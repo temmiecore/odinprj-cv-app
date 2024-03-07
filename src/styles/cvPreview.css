@@ -1,67 +1,77 @@
-.CVPreview {
+.page {
     padding: 15mm;
     width: 210mm;
     height: 297mm;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
-    gap: 15mm;
+    gap: 10mm;
 }
-.CVPreviewBorder {
+
+.border {
     border: 2px solid black;
 }
 
-.CVPreview h2, 
-.header h3, 
-.section p, 
-.item h3 {
-    font-weight: lighter;
-    font-size: 1.1em;
-}
-
-.header {
+.header,
+.list-item {
     display: flex;
     justify-content: space-between;
 }
 
-#name {
+.name {
     font-size: 2em;
-    font-weight: bold;
+}
+
+.personal-info h3,
+.links,
+.item-dates h3,
+.item-content.skill h4 {
+    font-weight: 100;
+    font-size: 1.1em;
 }
 
 .links {
-    margin-top: 3mm;
+    margin-top: 2mm;
 }
 
-.personalInfo, 
-.links, 
-.CVPreview p,
-.item h3,
-.item p {
-    color: #404040;
+.item-dates h3  {
+    font-size: 1.1em;
+    margin-bottom: 2mm;
 }
 
 .section {
     display: flex;
     flex-direction: column;
-    gap: 3mm;
 }
 
-.item {
+.section > h3 {
+    margin-bottom: 4mm;
+}
+
+.item-content {
+    width: 80%;
+}
+
+.item-content h4 {
+    margin-bottom: 2mm;
+}
+
+.item-content.skill {
     display: flex;
-    gap: 20mm;
 }
 
-.item h4 {
-    font-size: 1.1em;
+.item-content.skill h4 {
+    width: 40%;
 }
 
-.itemContent, .itemDate {
-    display: flex;
-    flex-direction: column;
-    gap: 1mm;
+.item-content.skill :first-child {
+    font-weight: 700;
 }
 
-.itemDate h3 {
-    width: 70px;
+.list-item {
+    margin-bottom: 5mm;
+}
+
+.list-item.skill {
+    margin-bottom: 1mm;
 }

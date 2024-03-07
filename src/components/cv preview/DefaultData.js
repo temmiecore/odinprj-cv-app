@@ -1,15 +1,15 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const defaultForm = {
-    firstName: "Name",
-    lastName: "Surname",
-    email: "email@email.com",
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.doe@email.com",
     phone: "555-555-5555",
     country: "USA",
     city: "California",
     birthday: "04-23-1994",
-    links: "github.com/username",
-    resumeObj: "Doggo ipsum heckin snoot heckin good boys heckin you are doin me a concern pats, mlem pupper clouds long bois.  Borkdrive extremely cuuuuuute clouds super chub, sub woofer. Many pats very jealous pupper ur givin me a spook noodle horse shibe thicc snoot big ol, length boy shoob snoot heckin good boys and girls long bois.",
+    links: "github.com/johhny",
+    resumeObj: "Dedicated and innovative software engineer with a passion for crafting robust and scalable solutions. Skilled in full-stack development, with a focus on leveraging cutting-edge technologies to deliver efficient and user-centric software products. Committed to continuous learning and staying abreast of industry trends to drive technological advancements.",
 }
 
 const educationItem1 = { 
@@ -17,9 +17,9 @@ const educationItem1 = {
     "Degree":"Bachelor of General Studies", 
     "School":"California State University", 
     "City":"California", 
-    "Start Date":"02-02-2222", 
-    "End Date":"02-02-2226", 
-    "Description":"Doggo ipsum heckin snoot heckin good boys heckin you are doin me a concern pats, mlem pupper clouds long bois.  Borkdrive extremely cuuuuuute clouds super chub, sub woofer. Many pats very jealous pupper ur givin me a spook noodle horse shibe thicc snoot big ol, length boy shoob snoot heckin good boys and girls long bois."
+    "Start Date":"09-02-2012", 
+    "End Date":"06-02-2016", 
+    "Description":"Bachelor of General Studies provided a diverse interdisciplinary education, fostering critical thinking and communication skills essential for navigating real-world challenges."
 };
 
 const educationItem2 = { 
@@ -27,9 +27,9 @@ const educationItem2 = {
     "Degree":"Master of Business Administration", 
     "School":"Harvard University", 
     "City":"Massachusetts", 
-    "Start Date":"02-02-2228", 
-    "End Date":"02-02-2234", 
-    "Description":"Pats puggo snoot woofer, long doggo.  Boofers you are doin me a concern lotsa pats, stop it fren. What a nice floof long doggo lotsa pats heckin angery woofer you are doin me a concern, wrinkler you are doin me a concern doge. "
+    "Start Date":"09-02-2016", 
+    "End Date":"06-02-2018", 
+    "Description":"MBA program offered specialized training in strategic management, leadership, and finance, preparing me for success in dynamic business environments."
 };
 
 const workItem1 = {
@@ -37,9 +37,9 @@ const workItem1 = {
     "Job Title":"Computer support Specialist",
     "Employer":"Delta Industries",
     "City":"California",
-    "Start Date": "02-02-2233",
-    "End Date": "02-02-2245",
-    "Description":"Heck bork pupper thicc such treat, doggo long doggo. Heckin angery woofer wow such tempt ruff tungg doing me a frighten adorable doggo, wow such tempt very good spot clouds wow such tempt. Maximum borkdrive very hand that feed shibe dat tungg tho woofer very good spot fluffer, I am bekom fat very good spot doge."
+    "Start Date": "05-02-2015",
+    "End Date": "",
+    "Description":"As a Computer Support Specialist at Delta Industries, I provided technical support, implemented security protocols, and conducted user training to ensure system efficiency and data integrity."
 }
 
 export {defaultForm, educationItem1, educationItem2, workItem1}
