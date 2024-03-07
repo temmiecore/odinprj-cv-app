@@ -1,4 +1,7 @@
-import styles from "../styles/cvStylingModule.module.css"
+import styles from "../styles/cvStylingModule.module.css";
+import alignLeft from "../assets/align-left.png";
+import alignCenter from "../assets/align-center.png";
+import alignRight from "../assets/align-right.png";
 
 function CVStyle({setStyling}) {
 
@@ -21,16 +24,16 @@ function CVStyle({setStyling}) {
             <h2>Header alignment:</h2>
             <div>
                 <img
-                src="src/assets/align-left.png"
+                src={alignLeft}
                 alt="left" 
                 onClick={()=>handleHeaderAlignment("left")}
                 />
                 <img
-                src="src/assets/align-center.png"
+                src={alignCenter}
                 alt="center" 
                 onClick={()=>handleHeaderAlignment("center")}
                 /><img
-                src="src/assets/align-right.png"
+                src={alignRight}
                 alt="right" 
                 onClick={()=>handleHeaderAlignment("right")}
                 />
