@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 const initialLists = {
     education: [educationItem1, educationItem2],
     work: [workItem1],
+    skills: [],
 }
 
 export default function App() {
@@ -24,7 +25,7 @@ export default function App() {
     });
 
     const [lists, dispatch] = useReducer(itemHandlingReducer, initialLists);
-    const { education, work } = lists;
+    const { education, work, skills } = lists;
 
     useEffect(() => {
         loadDefault();
@@ -36,12 +37,26 @@ export default function App() {
     }
 
     return <>
-        <CVEdit setForm={setForm} dispatch={dispatch} form={form} educationList={education} workList={work} loadDefault={loadDefault} />
-        <CVPreview form={form} education={education} work={work} />
+        <CVEdit
+            setForm={setForm}
+            dispatch={dispatch}
+            form={form}
+            educationList={education}
+            workList={work}
+            skillList={skills}
+            loadDefault={loadDefault}
+        />
+        <CVPreview
+            form={form}
+            education={education}
+            work={work} 
+        />
     </>
 }
 
 function itemHandlingReducer(prevState, action) {
+    //console.log(action.listId);
+    //console.log(action.type);
     switch (action.type) {
         case "add": {
             const id = uuidv4();
@@ -73,6 +88,13 @@ function itemHandlingReducer(prevState, action) {
                         "Description": values[5]
                     };
                     break;
+                }
+                case "skills": {
+                    item = {
+                        "id": id,
+                        "Skill": values[0],
+                        "Skill Proficiency": values[1] 
+                    }
                 }
             }
 

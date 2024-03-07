@@ -20,7 +20,10 @@ function ListItem({
                                     ? "date"
                                     : key.includes("Description")
                                         ? "textarea"
-                                        : "text"}
+                                        : key.includes("Skill Proficiency")
+                                            ? "select"
+                                            : "text"
+                            }
                             onChange={(e) => editItem(item.id, key, e.target.value, windowId)}
                             isRequired={
                                 key.includes("End") || key.includes("Description")
@@ -28,7 +31,18 @@ function ListItem({
                                     : true
                             }
                             value={item[key]}
-                        />
+                        >
+                            {
+                                key.includes("Skill Proficiency")
+                                    ? <>
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Proficient">Proficient</option>
+                                        <option value="Expert">Expert</option>
+                                    </>
+                                    : null
+                            }
+                        </InputBox>
                     );
             })}
             <button onClick={() => removeItem(item.id, windowId)}> Remove </button>

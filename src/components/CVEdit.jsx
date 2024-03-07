@@ -5,6 +5,7 @@ import EditSection from "../components/cv edit/EditSection";
 import EducationForm from "../components/cv edit/list sections forms/EducationForm";
 import WorkForm from "../components/cv edit/list sections forms/WorkForm";
 import styles from "../styles/cvedit.module.css";
+import SkillsForm from "./cv edit/list sections forms/SkillsForm";
 
 export default function CVEdit({
     setForm,
@@ -12,6 +13,7 @@ export default function CVEdit({
     form,
     educationList,
     workList,
+    skillList,
     loadDefault
 }) {
     const handlePersonalDetailChange = event => {
@@ -60,21 +62,34 @@ export default function CVEdit({
 
         <EditSection headerText="Education">
             <ListWindow
-                windowId={"education"}
+                windowId="education"
                 removeItem={handleItemRemoval}
                 editItem={handleItemEdit}
-                itemList={educationList} >
+                itemList={educationList}
+            >
                 <EducationForm addItem={(e) => handleItemAdd(e, "education")} />
             </ListWindow>
         </EditSection>
 
         <EditSection headerText="Work">
             <ListWindow
-                windowId={"work"}
+                windowId="work"
                 removeItem={handleItemRemoval}
                 editItem={handleItemEdit}
-                itemList={workList} >
+                itemList={workList}
+            >
                 <WorkForm addItem={(e) => handleItemAdd(e, "work")} />
+            </ListWindow>
+        </EditSection>
+
+        <EditSection headerText="Skills">
+            <ListWindow
+                windowId="skills"
+                removeItem={handleItemRemoval}
+                editItem={handleItemEdit}
+                itemList={skillList}
+            >
+                <SkillsForm addItem={(e) => handleItemAdd(e, "skills")} />
             </ListWindow>
         </EditSection>
 

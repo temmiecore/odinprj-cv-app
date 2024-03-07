@@ -10,7 +10,7 @@ export default function ListWindow({
 }) {
     return (
         <div className={styles.section}>
-            <div className={styles.list} style={!open ? { display: "none" } : null}>
+            <div className={styles.list}>
                 {itemList.map((item) => {
                     return (
                         <ListItem

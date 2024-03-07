@@ -13,7 +13,7 @@
 
 .content {
     transform-origin: top center;
-    animation: openContent 0.5s linear;
+    animation: openContent 0.2s ease-in;
 }
 
 .contentClosed {

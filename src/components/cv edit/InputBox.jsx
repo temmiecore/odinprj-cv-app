@@ -7,7 +7,8 @@ export default function InputBox({
   placeholder, 
   onChange, 
   isRequired, 
-  value 
+  value,
+  children // select options 
 }) {
     const _required = isRequired ? {required: true} : {}
 
@@ -27,6 +28,16 @@ export default function InputBox({
             onChange={onChange}
             {..._required}
           ></textarea>
+        ) : type == "select" ? (
+          <select
+            id={id}
+            name={id}
+            onChange={onChange}
+            value={value}
+            {..._required}
+          >
+            {children}
+          </select>
         ) : (
           <input
             value={value}
