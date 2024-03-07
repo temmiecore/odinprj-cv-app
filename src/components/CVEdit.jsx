@@ -6,8 +6,9 @@ import EducationForm from "../components/cv edit/list sections forms/EducationFo
 import WorkForm from "../components/cv edit/list sections forms/WorkForm";
 import styles from "../styles/cvedit.module.css";
 import SkillsForm from "./cv edit/list sections forms/SkillsForm";
+import { useState } from "react";
 
-export default function CVEdit({
+function CVEdit({
     setForm,
     dispatch,
     form,
@@ -17,6 +18,8 @@ export default function CVEdit({
     loadDefault,
     toPDF
 }) {
+
+    const [openedSections, setOpenedSection] = useState([false, false, false, false, false]);
 
     const handlePersonalDetailChange = event => {
         const { name, value } = event.target;
@@ -53,16 +56,21 @@ export default function CVEdit({
         });
     }
 
+    const handleOpeningSection = (sectionId) => {
+        setOpenedSection(prevData => 
+            prevData.map((section, i) => i == sectionId ? !section : false))
+    }
+
     return <div className={styles.section}>
-        <EditSection headerText="Personal Details">
+        <EditSection headerText="Personal Details" open={openedSections[0]} setOpen={() => handleOpeningSection(0)}>
             <PersonalDetails onInputChange={handlePersonalDetailChange} form={form} />
         </EditSection>
 
-        <EditSection headerText="Resume Objective">
+        <EditSection headerText="Resume Objective" open={openedSections[1]} setOpen={() => handleOpeningSection(1)}>
             <ResumeObjective onInputChange={handlePersonalDetailChange} form={form} />
         </EditSection>
 
-        <EditSection headerText="Education">
+        <EditSection headerText="Education" open={openedSections[2]} setOpen={() => handleOpeningSection(2)}>
             <ListWindow
                 windowId="education"
                 removeItem={handleItemRemoval}
@@ -73,7 +81,7 @@ export default function CVEdit({
             </ListWindow>
         </EditSection>
 
-        <EditSection headerText="Work">
+        <EditSection headerText="Work" open={openedSections[3]} setOpen={() => handleOpeningSection(3)}>
             <ListWindow
                 windowId="work"
                 removeItem={handleItemRemoval}
@@ -84,7 +92,7 @@ export default function CVEdit({
             </ListWindow>
         </EditSection>
 
-        <EditSection headerText="Skills">
+        <EditSection headerText="Skills" open={openedSections[4]} setOpen={() => handleOpeningSection(4)}>
             <ListWindow
                 windowId="skills"
                 removeItem={handleItemRemoval}
@@ -100,4 +108,4 @@ export default function CVEdit({
     </div>
 }
 
-
+export default CVEdit;

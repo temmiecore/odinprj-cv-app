@@ -7,7 +7,7 @@ export default function WindowOpenArrow({ open, setOpen }) {
         className={open ? "open" : "closed"}
         src={down}
         alt="close/open the window"
-        onClick={() => setOpen(!open)}
+        onClick={setOpen}
       />
     );
 }

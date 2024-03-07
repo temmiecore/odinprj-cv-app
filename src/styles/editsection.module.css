@@ -2,12 +2,12 @@
 .content {
     padding: 0.5em 1em;
     border: 1px solid gray;
-    width: 400px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-radius: 10px 10px 0 0;
 }
 

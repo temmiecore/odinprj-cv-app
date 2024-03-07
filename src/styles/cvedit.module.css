@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    flex-grow: 0.3;
 }
 
 /* For media queries? */

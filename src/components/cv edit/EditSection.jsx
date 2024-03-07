@@ -4,9 +4,10 @@ import styles from "../../styles/editsection.module.css"
 
 function EditSection({
     headerText,
-    children
+    children,
+    open,
+    setOpen
 }) {
-    const [open, setOpen] = useState(false);
 
     return <div className={styles.section}>
         <div className={styles.header}>

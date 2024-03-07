@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { defaultForm, educationItem1, educationItem2, workItem1 } from "./components/cv preview/DefaultData";
 import { v4 as uuidv4 } from 'uuid';
 import { usePDF } from 'react-to-pdf';
+import CVStyle from "./components/CVStyle";
 
 const initialLists = {
     education: [educationItem1, educationItem2],
@@ -14,6 +15,11 @@ const initialLists = {
 
 export default function App() {
     const {toPDF, targetRef} = usePDF({filename: "cv.pdf"});
+    
+    const [styling, setStyling] = useState({
+        headerAlignment: "left",
+        font: "Times New Roman"
+    });
 
     const [form, setForm] = useState({
         firstName: "",
@@ -56,7 +62,9 @@ export default function App() {
             work={work} 
             skills={skills}
             targetRef={targetRef}
+            styling={styling}
         />
+        <CVStyle setStyling={setStyling}/>
     </>
 }
 
