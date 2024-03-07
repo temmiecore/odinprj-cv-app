@@ -4,6 +4,7 @@ import CVPreview from "./components/CVPreview";
 import { useEffect } from 'react';
 import { defaultForm, educationItem1, educationItem2, workItem1 } from "./components/cv preview/DefaultData";
 import { v4 as uuidv4 } from 'uuid';
+import { usePDF } from 'react-to-pdf';
 
 const initialLists = {
     education: [educationItem1, educationItem2],
@@ -12,6 +13,8 @@ const initialLists = {
 }
 
 export default function App() {
+    const {toPDF, targetRef} = usePDF({filename: "cv.pdf"});
+
     const [form, setForm] = useState({
         firstName: "",
         lastName: "",
@@ -45,11 +48,14 @@ export default function App() {
             workList={work}
             skillList={skills}
             loadDefault={loadDefault}
+            toPDF={toPDF}
         />
         <CVPreview
             form={form}
             education={education}
             work={work} 
+            skills={skills}
+            targetRef={targetRef}
         />
     </>
 }

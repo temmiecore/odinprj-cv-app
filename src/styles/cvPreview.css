@@ -1,12 +1,14 @@
 .CVPreview {
     padding: 15mm;
-    border: 2px solid black;
     width: 210mm;
     height: 297mm;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     gap: 15mm;
+}
+.CVPreviewBorder {
+    border: 2px solid black;
 }
 
 .CVPreview h2, 

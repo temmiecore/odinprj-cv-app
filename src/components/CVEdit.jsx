@@ -14,8 +14,10 @@ export default function CVEdit({
     educationList,
     workList,
     skillList,
-    loadDefault
+    loadDefault,
+    toPDF
 }) {
+
     const handlePersonalDetailChange = event => {
         const { name, value } = event.target;
         setForm(prevState => ({
@@ -93,7 +95,8 @@ export default function CVEdit({
             </ListWindow>
         </EditSection>
 
-        <button onClick={() => loadDefault()}>Load Default</button>
+        <button onClick={loadDefault}>Load Default</button>
+        <button onClick={toPDF}>Download Preview</button>
     </div>
 }
 
